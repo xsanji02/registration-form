@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: #5a0834;
+}
+.registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: #5a0834;
+}
+
+.registration > form {
+  width: 16rem;
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #29031c;
+}
+
+input[type="text"],
+input[type="email"] {
+  height: 2.5rem;
+  text-indent: 5px;
+  margin-bottom: 12px;
+  width: 12rem;
+}
+
+input[type="checkbox"] {
+  margin: 10px 5px 0 0;
+}
+
+fieldset {
+  height: 7rem;
+  padding: 1rem;
+}
+
+input[type="radio"] {
+  margin-right: 1rem;
+}
+
+.submit {
+  background-color: #E44ec3;
+  color: white;
+  width: 7rem;
+  height: 2.2rem;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-left: 3rem;
+}
+
+.friendly {
+  color: white;
+}
+
+.fieldset-div {
+  background-color: #9d0b51;
+  color: white;
+}
+
+.favColor {
+  color: white;
+}
