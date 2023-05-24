@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [formDataBase, setFormDataBase] = useState([]);
   const [formDetails, setFormDetails] = useState({
     firstName: "",
     lastName: "",
@@ -11,7 +12,6 @@ function App() {
     employment: "",
     favColor: "",
   });
-  
   const handleChange = (e) => {
     const { name, type, value, checked } = e.target;
     setFormDetails((prevState) => {
@@ -21,10 +21,22 @@ function App() {
       };
     });
   };
+ 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(formDetails);
-  }
+    e.preventDefault();
+    setFormDataBase([...formDataBase, {formDetails}]);
+    setFormDetails({
+      firstName: "",
+      lastName: "",
+      email: "",
+      textarea: "",
+      isFriendly: false,
+      employment: "",
+      favColor: "",
+    });
+    console.log(formDataBase);
+  };
+
   return (
     <div className="registration">
       <form onSubmit={handleSubmit}>
@@ -66,7 +78,9 @@ function App() {
           name="isFriendly"
           checked={formDetails.isFriendly}
         />
-        <label htmlFor="isFriendly" className="friendly">Are you friendly?</label>
+        <label htmlFor="isFriendly" className="friendly">
+          Are you friendly?
+        </label>
         <br />
         <br />
         <fieldset className="fieldset-div">
@@ -103,7 +117,9 @@ function App() {
           <br />
         </fieldset>
         <br />
-        <label htmlFor="favColor" className="favColor">Select your favorite color</label>
+        <label htmlFor="favColor" className="favColor">
+          Select your favorite color
+        </label>
         <select
           id="favColor"
           onChange={handleChange}
